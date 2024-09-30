@@ -1,29 +1,12 @@
 import {
     Avatar,
-    Name,
-    useAddress,
-    useAvatar,
-    useName,
+    Name
   } from '@coinbase/onchainkit/identity';
-  import { useEffect } from 'react';
   import { base } from 'viem/chains';
   import { useAccount } from 'wagmi';
   
   export default function IdentityWrapper() {
     const { address } = useAccount();
-    const { data: addressBasename } = useAddress({ address, chain: base });
-    const { data: avatarBasename } = useAvatar({ address, chain: base });
-    const { data: basename } = useName({ address, chain: base });
-  
-    // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-      useEffect(() => {
-      }, [
-      address,
-      addressBasename,
-      avatarBasename,
-      basename,
-    ]);
-  
     return (
       <div className="mx-auto max-w-2xl p-4">
         {address && (
