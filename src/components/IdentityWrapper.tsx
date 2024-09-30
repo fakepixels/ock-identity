@@ -11,7 +11,6 @@ import {
   
   export default function IdentityWrapper() {
     const { address } = useAccount();
-  
     const { data: addressBasename } = useAddress({ address, chain: base });
     const { data: avatarBasename } = useAvatar({ address, chain: base });
     const { data: basename } = useName({ address, chain: base });
@@ -37,4 +36,4 @@ import {
         )}
       </div>
     );
-  }
+}
