@@ -21,6 +21,7 @@ type WalletWrapperParams = {
   className?: string;
   withWalletAggregator?: boolean;
 };
+
 export default function WalletWrapper({
   className,
   text,
