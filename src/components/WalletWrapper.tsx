@@ -1,4 +1,5 @@
 'use client';
+
 import {
   Address,
   Avatar,
@@ -46,10 +47,10 @@ export default function WalletWrapper({
             <EthBalance />
           </Identity>
           <WalletDropdownBasename />
-          <WalletDropdownLink icon="wallet" href="https://wallet.coinbase.com">
-            Go to Wallet Dashboard
+          <WalletDropdownLink icon="wallet" target="_blank" href="https://wallet.coinbase.com">
+            Wallet
           </WalletDropdownLink>
-          <WalletDropdownFundLink />
+          <WalletDropdownFundLink text="Fund" />
           <WalletDropdownDisconnect />
         </WalletDropdown>
       </Wallet>
