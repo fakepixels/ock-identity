@@ -29,7 +29,7 @@ export default function Page() {
         </div>
       </section>
       <section className="templateSection flex w-full flex-col items-center justify-center gap-4 rounded-xl bg-gray-100 px-2 py-4 md:grow">
-        <div className="flex h-[450px] w-[450px] max-w-full items-center justify-center rounded-xl bg-[#030712]">
+        <div className="flex h-[450px] w-[450px] max-w-full items-center justify-center rounded-xl bg-[#140431]">
           <IdentityWrapper />
         </div>
       </section>
