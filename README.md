@@ -1,7 +1,6 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/coinbase/onchainkit/main/site/docs/public/logo/v0-27.png">
-    <img alt="OnchainKit logo vibes" src="https://raw.githubusercontent.com/coinbase/onchainkit/main/site/docs/public/logo/v0-27.png" width="auto">
+   <img width="1507" alt="Screenshot 2024-10-03 at 8 49 53 AM" src="https://github.com/user-attachments/assets/ca8b022a-5650-42a0-94ed-c5059d3e23e3">
   </picture>
 </p>
 
@@ -10,8 +9,6 @@
 An Onchain Profile built with [OnchainKit](https://onchainkit.xyz), and ready to be deployed to Vercel.
 
 Play with it live on https://ock-profile.vercel.app
-
-Have fun! ⛵️
 
 <br />
 
