@@ -47,7 +47,11 @@ export default function WalletWrapper({
             <EthBalance />
           </Identity>
           <WalletDropdownBasename />
-          <WalletDropdownLink icon="wallet" target="_blank" href="https://wallet.coinbase.com">
+          <WalletDropdownLink
+            icon="wallet"
+            target="_blank"
+            href="https://wallet.coinbase.com"
+          >
             Wallet
           </WalletDropdownLink>
           <WalletDropdownFundLink text="Fund" />

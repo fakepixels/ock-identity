@@ -7,7 +7,7 @@
     "check": "biome check --write .",
     "ci:check": "biome ci --formatter-enabled=false --linter-enabled=false",
     "ci:format": "biome ci --linter-enabled=false --organize-imports-enabled=false",
-    "ci:lint": "biome ci --formatter-enabled=false --organize-imports-enabled=false",
+    "ci:lint": "biome ci --formatter-enabled=true --organize-imports-enabled=false",
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "format": "biome format --write .",
     "lint": "biome lint --write .",
@@ -19,6 +19,8 @@
   "dependencies": {
     "@coinbase/onchainkit": "^0.32.0",
     "framer-motion": "^11.9.0",
+    "lucide": "^0.447.0",
+    "lucide-react": "^0.447.0",
     "next": "^14.2.5",
     "permissionless": "^0.1.26",
     "react": "^18",
@@ -26,7 +28,7 @@
     "siwe": "^2.3.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.8.0",
+    "@biomejs/biome": "1.9.3",
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^14.2.0",
     "@types/node": "^20.11.8",
