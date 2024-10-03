@@ -5,11 +5,11 @@
   </picture>
 </p>
 
-# Onchain App Template
+# Onchain Profile 
 
-An Onchain App Template build with [OnchainKit](https://onchainkit.xyz), and ready to be deployed to Vercel.
+An Onchain Profile built with [OnchainKit](https://onchainkit.xyz), and ready to be deployed to Vercel.
 
-Play with it live on https://onchain-app-template.vercel.app
+Play with it live on https://ock-profile.vercel.app
 
 Have fun! ⛵️
 
