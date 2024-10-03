@@ -7,6 +7,7 @@ import {
   ONCHAINKIT_LINK,
   TWITTER_LINK,
 } from 'src/links';
+import { motion } from 'framer-motion'; // Import motion from framer-motion
 import ArrowSvg from 'src/svg/ArrowSvg';
 
 const docLinks = [
@@ -37,16 +38,18 @@ export default function Footer() {
       <ul className="mt-4 flex max-w-full flex-col flex-wrap justify-center gap-3 md:mt-0 md:flex-row md:justify-start md:gap-6">
         {docLinks.map(({ href, title }) => (
           <li className="flex" key={href}>
-            <a
+            <motion.a
               href={href}
               target="_blank"
               rel="noreferrer"
               title={title}
-              className="flex items-center gap-1 hover:text-indigo-600" // Added hover effect
+              className="flex items-center gap-1 hover:text-indigo-600"
+              whileHover={{ y: -5 }} // Move up slightly on hover
+              transition={{ type: 'spring', stiffness: 300 }} // Add bounciness
             >
               <p>{title}</p>
               <ArrowSvg />
-            </a>
+            </motion.a>
           </li>
         ))}
       </ul>
