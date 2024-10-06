@@ -153,7 +153,7 @@ export default function IdentityWrapper() {
           )}
         </motion.div>
       ) : (
-        <div className="text-white">
+        <div className='text-center text-white'>
           Connect your wallet to view your profile card.
         </div>
       )}
