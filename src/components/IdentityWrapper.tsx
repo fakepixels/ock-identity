@@ -22,8 +22,9 @@ export default function IdentityWrapper() {
   const [isOpen, setIsOpen] = useState(false); // State to manage dropdown visibility
 
   useEffect(() => {
-    console.log('Address:', address); // Debug log
+    
     const fetchEnsText = async () => {
+     
       if (address) {
         const cachedData = localStorage.getItem(address);
         if (cachedData) {
@@ -32,38 +33,38 @@ export default function IdentityWrapper() {
         }
 
         try {
-          const name = await getName({ chain: base, address: address }); // Get the name of the address
-          console.log('Name:', name);
-          const normalizedAddress = normalize(name as string); // Normalize the fetched name
-          const truncatedAddress = normalizedAddress.split('.base.eth')[0]; // Truncate before ".base.eth"
-          console.log('Truncated Address:', truncatedAddress);
+          
+          const name = await getName({ chain: base, address: address }); 
+          const normalizedAddress = normalize(name as string); 
+          
           const twitterText = await publicClient.getEnsText({
             name: normalizedAddress,
             key: 'com.twitter',
           });
+      
           const githubText = await publicClient.getEnsText({
             name: normalizedAddress,
             key: 'com.github',
           });
+       
           const farcasterText = await publicClient.getEnsText({
             name: normalizedAddress,
             key: 'xyz.farcaster',
           });
+         
           const urlText = await publicClient.getEnsText({
             name: normalizedAddress,
             key: 'url',
           });
-          console.log('ENS Text Responses:', {
-            twitterText,
-            githubText,
-            urlText,
-          });
+          
+
           const fetchedData = {
             twitter: twitterText,
             github: githubText,
             farcaster: farcasterText,
             url: urlText,
           };
+          
           setEnsText(fetchedData);
           localStorage.setItem(address, JSON.stringify(fetchedData));
         } catch (error) {
