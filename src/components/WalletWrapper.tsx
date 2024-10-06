@@ -11,10 +11,9 @@ import {
   ConnectWallet,
   Wallet,
   WalletDropdown,
-  WalletDropdownBasename,
   WalletDropdownDisconnect,
   WalletDropdownFundLink,
-  WalletDropdownLink,
+ 
 } from '@coinbase/onchainkit/wallet';
 
 type WalletWrapperParams = {
@@ -46,14 +45,6 @@ export default function WalletWrapper({
             <Address />
             <EthBalance />
           </Identity>
-          <WalletDropdownBasename />
-          <WalletDropdownLink
-            icon="wallet"
-            target="_blank"
-            href="https://wallet.coinbase.com"
-          >
-            Wallet
-          </WalletDropdownLink>
           <WalletDropdownFundLink text="Fund" />
           <WalletDropdownDisconnect />
         </WalletDropdown>
