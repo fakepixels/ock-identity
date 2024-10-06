@@ -9,12 +9,14 @@ import { normalize } from 'viem/ens';
 import { useAccount } from 'wagmi';
 import { publicClient } from '../client';
 import { motion } from 'framer-motion'; // Import framer-motion
+import { FarcasterSocialIcon } from './FarcasterIcon';
 
 export default function IdentityWrapper() {
   const { address } = useAccount();
   const [ensText, setEnsText] = useState<{
     twitter: string | null;
     github: string | null;
+    farcaster: string | null;
     url: string | null;
   } | null>(null);
   const [isOpen, setIsOpen] = useState(false); // State to manage dropdown visibility
@@ -42,6 +44,10 @@ export default function IdentityWrapper() {
             name: normalizedAddress,
             key: 'com.github',
           });
+          const farcasterText = await publicClient.getEnsText({
+            name: normalizedAddress,
+            key: 'xyz.farcaster',
+          });
           const urlText = await publicClient.getEnsText({
             name: normalizedAddress,
             key: 'url',
@@ -54,6 +60,7 @@ export default function IdentityWrapper() {
           const fetchedData = {
             twitter: twitterText,
             github: githubText,
+            farcaster: farcasterText,
             url: urlText,
           };
           setEnsText(fetchedData);
@@ -101,6 +108,18 @@ export default function IdentityWrapper() {
                   className="hover:underline"
                 >
                   {ensText.twitter}
+                </a>
+              </div>
+              <div className="mt-2 flex items-center space-x-2">
+                <FarcasterSocialIcon className="h-4 w-4" />
+                <span>Farcaster:</span>
+                <a
+                  href={`https://warpcast.com/${ensText.farcaster}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  {ensText.farcaster}
                 </a>
               </div>
               <div className='mt-2 flex items-center space-x-2'>
