@@ -9,7 +9,7 @@ import { normalize } from 'viem/ens';
 import { useAccount } from 'wagmi';
 import { publicClient } from '../client';
 import { motion } from 'framer-motion'; // Import framer-motion
-import { FarcasterSocialIcon } from './FarcasterIcon';
+import { FarcasterSocialIcon } from '../svg/FarcasterIcon';
 
 export default function IdentityWrapper() {
   const { address } = useAccount();
@@ -35,7 +35,8 @@ export default function IdentityWrapper() {
           const name = await getName({ chain: base, address: address }); // Get the name of the address
           console.log('Name:', name);
           const normalizedAddress = normalize(name as string); // Normalize the fetched name
-          console.log('Normalized Address:', normalizedAddress);
+          const truncatedAddress = normalizedAddress.split('.base.eth')[0]; // Truncate before ".base.eth"
+          console.log('Truncated Address:', truncatedAddress);
           const twitterText = await publicClient.getEnsText({
             name: normalizedAddress,
             key: 'com.twitter',
@@ -82,8 +83,9 @@ export default function IdentityWrapper() {
           animate={{ opacity: 1, y: 0 }} // Animated state
           transition={{ duration: 0.5 }} // Animation duration
         >
+          
           {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-          <div className='flex cursor-pointer items-center justify-between space-x-2 rounded-full bg-white bg-opacity-20 p-2 transition-all duration-300 hover:bg-opacity-30' onClick={() => setIsOpen(!isOpen)}> 
+         <div className='flex cursor-pointer items-center justify-between space-x-2 rounded-full bg-white bg-opacity-20 p-2 transition-all duration-300 hover:bg-opacity-30' onClick={() => setIsOpen(!isOpen)}> 
             <div className='flex items-center space-x-2'>
               <Avatar address={address} chain={base} />
               <Name address={address} chain={base} className="text-m text-white" />
