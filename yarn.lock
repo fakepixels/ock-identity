@@ -1138,10 +1138,10 @@
   resolved "https://registry.npmjs.org/@biomejs/cli-darwin-arm64/-/cli-darwin-arm64-1.9.3.tgz"
   integrity sha512-QZzD2XrjJDUyIZK+aR2i5DDxCJfdwiYbUKu9GzkCUJpL78uSelAHAPy7m0GuPMVtF/Uo+OKv97W3P9nuWZangQ==
 
-"@coinbase/onchainkit@^0.32.0":
-  version "0.32.0"
-  resolved "https://registry.npmjs.org/@coinbase/onchainkit/-/onchainkit-0.32.0.tgz"
-  integrity sha512-vLOrNDmg7V5vVddiqBDV4OkIMGz2aQoFebSYAbL4CI6kTs/NtdWTYop8AAJyQ615h7VP3pNSQH+qOZX0lAKQNA==
+"@coinbase/onchainkit@^0.35.2":
+  version "0.35.2"
+  resolved "https://registry.npmjs.org/@coinbase/onchainkit/-/onchainkit-0.35.2.tgz"
+  integrity sha512-bVXmr2nM59DfD0ilj6BKY6d3WmVu9p5oNv9ykIBDlp0g8B95EqpBU3nZRgiq+fnyCd/Wq85imRhzYED06o7H/A==
   dependencies:
     "@rainbow-me/rainbowkit" "^2.1.3"
     "@tanstack/react-query" "^5"

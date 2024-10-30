@@ -1,14 +1,13 @@
 'use client';
+import { useAccount } from 'wagmi';
 import Footer from 'src/components/Footer';
 import IdentityWrapper from 'src/components/IdentityWrapper';
 import { ONCHAINKIT_LINK } from 'src/links';
 import OnchainkitSvg from 'src/svg/OnchainkitSvg';
-import { useAccount } from 'wagmi';
-import LoginButton from '../components/LoginButton';
-import SignupButton from '../components/SignupButton';
+import WalletWrapper from 'src/components/WalletWrapper';
 
 export default function Page() {
-  const { address } = useAccount();
+  const { isConnected } = useAccount();
 
   return (
     <div className='flex h-full w-96 max-w-full flex-col px-1 font-sans md:w-[1008px]'>
@@ -23,15 +22,18 @@ export default function Page() {
             <OnchainkitSvg />
           </a>
           <div className="flex items-center gap-3">
-            <SignupButton />
-            {!address && <LoginButton />}
+            <WalletWrapper />
           </div>
         </div>
       </section>
-      <section className="templateSection flex w-full flex-col items-center justify-center gap-4 rounded-xl px-2 py-4 md:grow">
-        <div className="flex h-[450px] w-[450px] max-w-full items-center justify-center rounded-xl bg-[#140431]">
+      <section className="flex w-full flex-col items-center justify-center gap-4 rounded-xl px-2 py-4 md:grow">
+        {isConnected ? (
           <IdentityWrapper />
-        </div>
+        ) : (
+          <div className="flex h-48 w-full max-w-md items-center justify-center rounded-lg bg-gray-100 p-6 text-center text-gray-600">
+            Please connect your account to see your profile
+          </div>
+        )}
       </section>
       <Footer />
     </div>
