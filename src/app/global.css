@@ -48,12 +48,6 @@ a {
   text-decoration: underline;
 }
 
-svg {
-  display: block;
-  overflow: visible;
-  vertical-align: middle;
-}
-
 ul {
   padding-inline-start: 0;
 }

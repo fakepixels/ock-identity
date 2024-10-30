@@ -21,8 +21,8 @@ function OnchainProviders({ children }: Props) {
         <OnchainKitProvider apiKey={NEXT_PUBLIC_CDP_API_KEY} chain={base}
          config={{
           appearance: {
-            mode: 'dark',
-            theme: 'default', 
+            mode: 'auto',
+            theme: 'base', 
           },
         }}>
           <RainbowKitProvider modalSize="compact">

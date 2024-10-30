@@ -5,6 +5,7 @@ import IdentityWrapper from 'src/components/IdentityWrapper';
 import { ONCHAINKIT_LINK } from 'src/links';
 import OnchainkitSvg from 'src/svg/OnchainkitSvg';
 import WalletWrapper from 'src/components/WalletWrapper';
+import { motion } from 'framer-motion';
 
 export default function Page() {
   const { isConnected } = useAccount();
@@ -28,7 +29,29 @@ export default function Page() {
       </section>
       <section className="flex w-full flex-col items-center justify-center gap-4 rounded-xl px-2 py-4 md:grow">
         {isConnected ? (
-          <IdentityWrapper />
+          <>
+            <IdentityWrapper />
+            <div className='flex w-full max-w-md flex-col items-center rounded-lg bg-gray-50/50 p-6 backdrop-blur-sm'>
+              <motion.h1 
+                className='mb-4 text-center font-bold text-4xl'
+                initial={{ scale: 0.5, opacity: 0 }}
+                animate={{ 
+                  scale: 1, 
+                  opacity: 1,
+                  rotate: [0, -5, 5, -5, 0] 
+                }}
+                transition={{ 
+                  duration: 1.0,
+                  rotate: { duration: 0.7, delay: 0.8 }
+                }}
+              > 
+                Looking a bit bare? 
+              </motion.h1>
+              <div className='flex flex-col items-center'>
+                <p className='text-center'> Go to <a href="https://base.org" target="_blank" rel="noreferrer" className=' hover:text-[#0052ff] hover:text-bold'>Base.org</a> to add some details to your profile. <br /> Then see it everywhere. </p>
+              </div>
+            </div>
+          </>
         ) : (
           <div className="flex h-48 w-full max-w-md items-center justify-center rounded-lg bg-gray-100 p-6 text-center text-gray-600">
             Please connect your account to see your profile
